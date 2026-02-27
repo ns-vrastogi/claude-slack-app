@@ -1,0 +1,33 @@
+# Personal task history
+skills/to-do-skill/tasks.json
+
+# Backup files
+*.bak
+*.bak_*
+
+# Binary files
+*.jar
+*.pdf
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Reports directory
+skills/self-service-skill/reports/
+
+# Excluded skills (sensitive/personal deployment)
+skills/survey-tool/
+skills/slack-bot-deployment/
+
+# Environment files with credentials
+.env
+*.env
+mcp-atlassian.env
+
+# Local logs
+*.log
+history.jsonl
+learnings-queue.json
+stats-cache.json

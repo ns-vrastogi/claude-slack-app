@@ -1,0 +1,52 @@
+{
+  "apiKey": "your-anthropic-api-key",
+  "mcpServers": {
+    "ssh": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@laomeifun/mcp-ssh"
+      ],
+      "env": {
+        "SSH_HOSTS": "your-gateway-hostname.your-cluster.netskope.com"
+      }
+    },
+    "rest-api": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "dkmaker-mcp-rest-api"
+      ],
+      "env": {
+        "REST_BASE_URL": "https://your-jenkins-host.netskope.com",
+        "REST_BASIC_USERNAME": "your-username@your-company.com",
+        "REST_BASIC_PASSWORD": "your-api-token",
+        "REST_ENABLE_SSL_VERIFY": "true",
+        "HEADER_Accept": "application/json"
+      }
+    },
+    "sumologic": {
+      "command": "node",
+      "args": [
+        "--experimental-specifier-resolution=node",
+        "~/mcp-sumologic/dist/index.js"
+      ],
+      "env": {
+        "ENDPOINT": "https://api.sumologic.com/api/v1",
+        "SUMO_API_ID": "your-sumo-api-id",
+        "SUMO_API_KEY": "your-sumo-api-key",
+        "NODE_PATH": "~/mcp-sumologic/dist"
+      }
+    },
+    "confluence": {
+      "command": "/Library/Frameworks/Python.framework/Versions/3.12/bin/mcp-atlassian",
+      "args": [],
+      "env": {
+        "CONFLUENCE_URL": "https://your-org.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your-username@your-company.com",
+        "CONFLUENCE_API_TOKEN": "your-api-token",
+        "CONFLUENCE_SSL_VERIFY": "false"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "vpp_scale_performance",
+  "version": "1.1.0",
+  "description": "Automated scale and performance testing workflow for VPP-based GRE and IPSEC gateways with version verification and automated deployment",
+  "invocation": {
+    "type": "slash_command",
+    "command": "vpp-scale-perf"
+  },
+  "author": "Netskope IPSEC/GRE Team",
+  "tags": ["performance", "scale", "vpp", "ipsec", "gre", "testing", "automation", "regression"],
+  "dependencies": {
+    "skills": ["self-service-skill"],
+    "tools": ["tsh", "python3"],
+    "hosts": [
+      "vppgregw01.c18.iad0.netskope.com",
+      "vppipsecgw04.c18.iad0.netskope.com",
+      "nsgwdeployment.iad0.netskope.com"
+    ]
+  },
+  "features": {
+    "version_verification": true,
+    "automated_deployment": true,
+    "test_execution": true,
+    "result_reporting": true
+  }
+}

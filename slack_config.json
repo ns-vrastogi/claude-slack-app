@@ -1,0 +1,16 @@
+{
+  "slack_bot_token": "xoxb-your-slack-bot-token",
+  "default_channel": "#general",
+  "channels": {
+    "deployments": "your-channel-id",
+    "incidents": "your-channel-id",
+    "testing": "your-channel-id",
+    "team-updates": "your-channel-id",
+    "alerts": "your-channel-id"
+  },
+  "auto_notify": {
+    "deployments": true,
+    "test_results": true,
+    "incidents": true
+  }
+}

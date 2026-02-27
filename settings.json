@@ -1,0 +1,27 @@
+{
+  "model": "sonnet[1m]",
+  "enabledMcpjsonServers": [
+    "ssh",
+    "mcp-atlassian"
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/bash -c 'if [[ \"$CLAUDE_TOOL_INPUT\" == *\"tsh \"* ]] && [[ \"$CLAUDE_TOOL_INPUT\" == *\"--cluster iad0\"* ]]; then exit 0; fi; exit 1'"
+          },
+          {
+            "type": "command",
+            "command": "/bin/bash -c 'DESC=\"$CLAUDE_TOOL_DESCRIPTION\"; if [[ \"$DESC\" == *\"Monitor build status\"* ]] || [[ \"$DESC\" == *\"Wait\"*\"minutes\"* ]] || [[ \"$DESC\" == *\"sleep\"* ]] || [[ \"$DESC\" == *\"Sleep\"* ]] || [[ \"$DESC\" == *\"scheduler\"* ]] || [[ \"$DESC\" == *\"Slot\"*\"status\"* ]] || [[ \"$DESC\" == *\"monitoring\"* ]] || [[ \"$DESC\" == *\"Calculate wait\"* ]] || [[ \"$DESC\" == *\"Check Jenkins build\"* ]] || [[ \"$DESC\" == *\"post-deployment validation\"* ]]; then exit 0; fi; exit 1'"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "claude-reflect@claude-reflect-marketplace": true
+  }
+}

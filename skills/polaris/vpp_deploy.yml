@@ -1,0 +1,28 @@
+allowDuplicateHostnames: null
+autostart: true
+base_image: ubuntu20
+cpus: 8
+disableMemballoon: null
+diskGiB: 100
+disks: []
+existing_disks: []
+fqdn: null
+kvm_criteria: []
+kvm_hostname: kvmipsecqe03.iad0.netskope.com
+memoryKiB: 8388608
+name: vppipsecgw01.iad0
+native_vlan: 800
+network_config:
+ interfaces:
+ - type: sriov
+   vlan: 700
+ - dns: none
+   ip_address: none
+   name: egw
+   num_vfs: 2
+   skip_config: true
+   type: sriov
+   vlan: 584
+   vlan_tagged: false
+override_domain: iad0.netskope.com
+pop_name: iad0

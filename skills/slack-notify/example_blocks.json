@@ -1,0 +1,56 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "🚀 Deployment Summary"
+    }
+  },
+  {
+    "type": "section",
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*POP*\niad0"
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Build*\n134.0.0.3391"
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Hosts*\n5 gateways"
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Duration*\n12 minutes"
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Status*: ✅ All hosts deployed successfully"
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Deployed Hosts:*\n• vppipsecgw01.iad0 ✓\n• vppipsecgw02.iad0 ✓\n• vppipsecgw03.iad0 ✓\n• vppipsecgw04.iad0 ✓\n• vppipsecgw05.iad0 ✓"
+    }
+  },
+  {
+    "type": "context",
+    "elements": [
+      {
+        "type": "mrkdwn",
+        "text": "Posted by Claude Code • 2026-02-23 15:30 UTC"
+      }
+    ]
+  }
+]

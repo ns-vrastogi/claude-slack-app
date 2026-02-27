@@ -1,0 +1,10 @@
+prfclient01.c18.iad0.netskope.com
+prfclient01.iad0.netskope.com
+prfclient02.c18.iad0.netskope.com
+prfclient02.iad0.netskope.com
+prfclient03.c18.iad0.netskope.com
+prfclient03.iad0.netskope.com
+prfclient04.c18.iad0.netskope.com
+prfclient04.iad0.netskope.com
+prfclient05.c18.iad0.netskope.com
+prfclient05.iad0.netskope.com

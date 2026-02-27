@@ -1,0 +1,25 @@
+{
+  "slack_bot_token": "xoxb-your-slack-bot-token",
+  "default_channel": "#general",
+  "channels": {
+    "deployments": "C01234ABCD",
+    "incidents": "C56789EFGH",
+    "testing": "C11111TEST",
+    "team-updates": "C22222UPDT",
+    "alerts": "C33333ALRT"
+  },
+  "auto_notify": {
+    "deployments": true,
+    "test_results": true,
+    "incidents": true
+  },
+  "mention_users": {
+    "vikash": "U01234VKAS",
+    "team-lead": "U56789LEAD"
+  },
+  "message_defaults": {
+    "include_timestamp": true,
+    "include_footer": true,
+    "footer_text": "Posted by Claude Code"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "legacy-scale-perf",
+  "version": "1.0.0",
+  "description": "Scale and performance testing workflow for Legacy IPSECGW infrastructure. Guides through tunnel configuration, client setup, throughput testing, and monitoring.",
+  "invocation": {
+    "type": "slash_command",
+    "command": "legacy-scale-perf"
+  },
+  "author": "Netskope IPSEC/GRE Team",
+  "tags": ["performance", "scale", "ipsecgw", "testing", "regression"]
+}
