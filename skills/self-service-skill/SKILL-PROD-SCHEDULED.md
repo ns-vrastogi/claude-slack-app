@@ -1,7 +1,7 @@
-name: self-service-production
-description: Production deployment for VPP-based services. Supports immediate and scheduled deployments via Jenkins CLI.
+name: self-service-production-scheduled
+description: Scheduled production deployment for VPP-based services. Use when user specifies a time/schedule. For immediate deployments use SKILL-PROD-IMMEDIATE.md.
 
-# Production Deployment Guide
+# Production Scheduled Deployment Guide
 
 ---
 

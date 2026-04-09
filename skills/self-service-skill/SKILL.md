@@ -57,15 +57,19 @@ Parse POP from user input:
 - Anything else            (del1 etc) → Production
 ```
 
-| Environment | Skill File | Confirmation | Scheduling |
-|-------------|-----------|-------------|------------|
-| QA (c*, iad0, stg*) | `SKILL-QA.md` | Not required | Supported |
-| Production (all others) | `SKILL-PROD.md` | **Mandatory** | Supported |
+| Environment | Mode | Skill File | Confirmation |
+|-------------|------|-----------|-------------|
+| QA (c*, iad0, stg*) | Immediate | `SKILL-QA.md` | Not required |
+| QA (c*, iad0, stg*) | Scheduled | `SKILL-QA.md` | Not required |
+| Production | **Immediate** | `SKILL-PROD-IMMEDIATE.md` | **Mandatory** |
+| Production | **Scheduled** | `SKILL-PROD-SCHEDULED.md` | **Mandatory** |
 
 **Workflow:**
 1. Identify POP type from user request
-2. Check for "schedule/scheduled/at [time]" keywords → scheduled mode
-3. Read the appropriate skill file and follow its instructions
+2. If Production — check for "schedule/scheduled/at [time]" keywords:
+   - Present → use `SKILL-PROD.md`
+   - Absent → use `SKILL-PROD-IMMEDIATE.md`
+3. If QA → use `SKILL-QA.md` (handles both immediate and scheduled)
 
 ---
 

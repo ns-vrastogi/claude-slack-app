@@ -320,4 +320,4 @@ If result is **SUCCESS** or **UNSTABLE** → deployment complete.
 
 ## See Also
 - `SKILL-DEPLOYMENT-FAILURE.md` — failure diagnosis and retry workflow
-- `SKILL-PROD.md` — scheduled deployment workflow
+- `SKILL-PROD-SCHEDULED.md` — scheduled deployment workflow
