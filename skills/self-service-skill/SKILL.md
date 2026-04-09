@@ -47,6 +47,17 @@ java -jar ~/.claude/jenkins-cli.jar -s ${JENKINS_PROD_URL} -auth ${JENKINS_USERN
 
 ---
 
+## ⚠️ Read CONFIG.md First
+
+**Before every deployment, read `CONFIG.md`** to get:
+- Jenkins job names for the requested service
+- The exact parameter list your pipeline accepts
+- Which fixed parameters apply to prod vs QA
+
+Use those values when building the Jenkins command. Do NOT use hardcoded values from examples in other skill files.
+
+---
+
 ## Environment Routing
 
 ```

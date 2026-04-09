@@ -86,32 +86,27 @@ TICKET:  from user, or default ENG-12345
 
 **Step 2 — Trigger Jenkins**
 
+Read `CONFIG.md` for the correct job name and parameter list for QA, then build the command:
+
 ```bash
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 java -jar ~/.claude/jenkins-cli.jar \
   -s "${JENKINS_QA_URL}" \
   -auth "${JENKINS_USERNAME}:${JENKINS_QA_TOKEN}" \
-  build "${JENKINS_JOB_PREFIX}_<SERVICE>" -s \
+  build "<job name from CONFIG.md>" -s \
   -p POPS=<pop> \
   -p ANSIBLE_HOSTGROUPS=<hostname> \
   -p RELEASE=<version> \
   -p ANSIBLE_CONFIG_IMAGE_TAG=<tag> \
   -p ANSIBLE_COMPONENT_NAME=<SERVICE> \
   -p ANSIBLE_CONFIG_IMAGE_NAME=<SERVICE>-ansible-config \
-  -p ANSIBLE_ARTIFACTORY_CHANNEL=ipsec-gre-release-docker \
-  -p TICKET=<ticket> \
-  -p DEPLOY_TYPE=DEPLOY \
-  -p BYPASS_JIRA=YES \
-  -p RUN_QE_PDV=DEPLOY_ONLY
+  # Add/remove remaining -p flags based on QA Fixed Parameters in CONFIG.md
 
 echo "✅ QA deployment complete"
 ```
 
-**Notes:**
-- `ANSIBLE_HOSTGROUPS` uses the **hostname** in QA (unlike Production which uses service name)
-- `BYPASS_JIRA=YES` and `RUN_QE_PDV=DEPLOY_ONLY` skip JIRA/PDV inside Jenkins — remove if your pipeline doesn't have these
-- For REST API fallback instead of Jenkins CLI, see the Jenkins REST API docs
+**Note**: `ANSIBLE_HOSTGROUPS` uses the **hostname** in QA (unlike Production which uses the service name). All other parameters come from `CONFIG.md`.
 
 ---
 

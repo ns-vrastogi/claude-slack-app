@@ -228,8 +228,7 @@ if 'executable' in d:
 fi
 ```
 
-**Note**: `BYPASS_JIRA=YES`, `RUN_QE_PDV=DEPLOY_ONLY`, `BYPASS_MONITORING_RESULT=YES` skip
-those pipeline stages inside Jenkins. Remove these parameters if your pipeline doesn't have them.
+**Note**: Use the parameter list from `CONFIG.md` — add or remove `--data-urlencode` lines to match your pipeline exactly.
 
 ---
 
@@ -291,19 +290,14 @@ If result is **SUCCESS** or **UNSTABLE** → deployment complete.
 
 ## Jenkins Parameters Reference
 
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| `POPS` | `<lowercase pops>` | e.g. `del1,ams1` |
-| `RELEASE` | `<version>` | e.g. `134.0.8.3068` |
-| `ANSIBLE_CONFIG_IMAGE_TAG` | `<tag>` | e.g. `134.0.14` |
-| `ANSIBLE_COMPONENT_NAME` | `<service>` | **CRITICAL** — omit causes "No components specified" |
-| `ANSIBLE_HOSTGROUPS` | `<service>` | **CRITICAL** |
-| `ANSIBLE_CONFIG_IMAGE_NAME` | `<service>-ansible-config` | **CRITICAL** |
-| `ANSIBLE_ARTIFACTORY_CHANNEL` | `ipsec-gre-production-docker` | Adjust for your artifact repo |
-| `BYPASS_MONITORING_RESULT` | `YES` | Remove if your pipeline doesn't have this |
-| `BYPASS_JIRA` | `YES` | Remove if your pipeline doesn't have this |
-| `RUN_QE_PDV` | `DEPLOY_ONLY` | Remove if your pipeline doesn't have this |
-| `DEPLOY_TYPE` | `DEPLOY` | |
+**Job name and parameter list come from `CONFIG.md`** — do not use hardcoded values.
+
+Read `CONFIG.md` to determine:
+- The correct Jenkins job name for the requested service
+- Which parameters to include (user-provided + derived + fixed)
+- Which fixed parameters to omit (those not applicable to your pipeline)
+
+Build the `curl --data-urlencode` command using exactly those parameters.
 
 ---
 

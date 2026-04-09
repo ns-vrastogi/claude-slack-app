@@ -152,16 +152,9 @@ TRIGGER_RESPONSE=$(curl -sg -D - -o /dev/null -X POST \
   --data-urlencode "ANSIBLE_COMPONENT_NAME=${SERVICE}" \
   --data-urlencode "ANSIBLE_HOSTGROUPS=${SERVICE}" \
   --data-urlencode "ANSIBLE_CONFIG_IMAGE_NAME=${SERVICE}-ansible-config" \
-  --data-urlencode "ANSIBLE_ARTIFACTORY_CHANNEL=ipsec-gre-production-docker" \
-  --data-urlencode "TICKET=${TICKET}" \
-  --data-urlencode "ANSIBLE_VERBOSITY=2" \
-  --data-urlencode "ANSIBLE_CORE_VERSION=2.15" \
-  --data-urlencode "BYPASS_MONITORING_RESULT=YES" \
-  --data-urlencode "BYPASS_JIRA=YES" \
-  --data-urlencode "RUN_QE_PDV=DEPLOY_ONLY" \
-  --data-urlencode "DEPLOY_TYPE=DEPLOY" \
-  --data-urlencode "SELECT_ALL_POPS=" \
-  --data-urlencode "SELECT_ALL_COMPONENTS=")
+  # Add remaining parameters from CONFIG.md (fixed production parameters)
+  # Use the same parameter list as the original deployment trigger
+  )
 
 HTTP_CODE=$(echo "$TRIGGER_RESPONSE" | grep -oP '^HTTP/\S+ \K\d+' | tail -1)
 echo "Retry triggered for: ${FAILED_POPS} (HTTP $HTTP_CODE)"
